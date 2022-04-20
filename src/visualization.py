@@ -8,7 +8,7 @@ def make_meshgrid(x, y, h=.01):
     return xx, yy
 
 
-def make_decision_boundary_plot(clf_fit,X0,X1,x_grid,y_grid,title):
+def make_decision_boundary_plot(clf_fit,X0,X1,y,x_grid,y_grid,title):
     Z = clf_fit.predict(np.c_[x_grid, y_grid])
     fig = go.Figure(data = go.Contour(x = x_grid, y = y_grid, 
                     z = Z,colorscale=[[0, 'rgb(204,229,255)'],[1,'rgb(255,153,150)']],showscale=False))
